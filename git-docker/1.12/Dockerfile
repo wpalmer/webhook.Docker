@@ -1,4 +1,4 @@
-FROM docker:1.9
+FROM docker:1.12
 ENV         GOPATH /go
 ENV         SRCPATH ${GOPATH}/src/github.com/adnanh
 ENV         WEBHOOK_VERSION 2.3.8
@@ -15,3 +15,15 @@ RUN         apk add --update -t build-deps curl git go libc-dev gcc libgcc && \
 EXPOSE      9000
 
 ENTRYPOINT  ["/usr/local/bin/webhook"]
+RUN apk add --update git openssh-client \
+    && mkdir -p /etc/ssh \
+    && { \
+        echo -n 'github.com ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAq2A7hRGmdnm9' \
+     && echo -n 'tUDbO9IDSwBK6TbQa+PXYPCPy6rbTrTtw7PHkccKrpp0yVhp5HdEIcKr6pL' \
+     && echo -n 'lVDBfOLX9QUsyCOV0wzfjIJNlGEYsdlLJizHhbn2mUjvSAHQqZETYP81eFz' \
+     && echo -n 'LQNnPHt4EVVUh7VfDESU84KezmD5QlWpXLmvU31/yMf+Se8xhHTvKSCZIFI' \
+     && echo -n 'mWwoG6mbUoWf9nzpIoaSjB+weqqUUmpaaasXVal72J+UX2B+2RPW3RcT0eO' \
+     && echo -n 'zQgqlJL3RKrTJvdsjE3JEAvGq3lGHSZXy28G3skua2SmVi/w4yCE6gbODqn' \
+     && echo    'TWlg7+wC604ydGXA8VJiS5ap43JXiUFFAaQ==' \
+    ; } > /etc/ssh/ssh_known_hosts
+    
