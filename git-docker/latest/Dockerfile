@@ -6,7 +6,7 @@ ENV         JQ_VERSION 1.5
 ENV         VDOCKER_VERSION 0.0.2
 
 RUN         apk add --update -t build-deps curl git go libc-dev gcc libgcc && \
-            apk add --update bash && \
+            apk add --update bash tar xz bzip2 && \
             curl -L -o /tmp/webhook-${WEBHOOK_VERSION}.tar.gz https://github.com/adnanh/webhook/archive/${WEBHOOK_VERSION}.tar.gz && \
             mkdir -p ${SRCPATH} && tar -xvzf /tmp/webhook-${WEBHOOK_VERSION}.tar.gz -C ${SRCPATH} && \
             mv -f ${SRCPATH}/webhook-* ${SRCPATH}/webhook && \
