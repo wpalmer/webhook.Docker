@@ -3,7 +3,7 @@ ENV         GOPATH /go
 ENV         SRCPATH ${GOPATH}/src/github.com/adnanh
 ENV         WEBHOOK_VERSION 2.3.8
 ENV         JQ_VERSION 1.5
-ENV         VDOCKER_VERSION 0.0.1
+ENV         VDOCKER_VERSION 0.0.2
 
 RUN         apk add --update -t build-deps curl git go libc-dev gcc libgcc && \
             apk add --update bash && \
