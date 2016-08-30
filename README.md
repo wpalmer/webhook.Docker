@@ -1,8 +1,9 @@
 Webhook, Dockerized, with Docker, for ad-hoc Docker Image builds
 =================
 
-A combination of the official [`docker`](https://hub.docker.com/_/docker/) image, and
-the [`docker-webhook`](https://hub.docker.com/r/almir/webhook/) image.
+A combination of the official [`docker`](https://hub.docker.com/_/docker/) image,
+the [`docker-webhook`](https://hub.docker.com/r/almir/webhook/) image,
+and the [`vdocker`](https://github.com/wpalmer/vdocker/) script.
 
 This should be all you need to piece together a basic ad-hoc build system.
 
