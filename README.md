@@ -2,10 +2,16 @@ Webhook, Dockerized, with Docker, for ad-hoc Docker Image builds
 =================
 
 A combination of the official [`docker`](https://hub.docker.com/_/docker/) image,
-the [`docker-webhook`](https://hub.docker.com/r/almir/webhook/) image,
+the [`webhook`](https://hub.docker.com/r/almir/webhook/) image,
 and the [`vdocker`](https://github.com/wpalmer/vdocker/) script.
 
 This should be all you need to piece together a basic ad-hoc build system.
+
+The `aws` tag is a combination of the
+[`webhook`](https://hub.docker.com/r/almir/webhook/) and the
+[`aws`](https://github.com/wpalmer/aws/) command-line interface, without docker,
+for when all you need is to trigger an AWS API call (such as an SNS
+notification, or a CloudFormation stack update) via a webhook.
 
 Example:
 
