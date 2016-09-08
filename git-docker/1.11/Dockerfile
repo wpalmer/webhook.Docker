@@ -1,7 +1,7 @@
 FROM docker:1.11
 ENV         GOPATH /go
 ENV         SRCPATH ${GOPATH}/src/github.com/adnanh
-ENV         WEBHOOK_VERSION 2.3.8
+ENV         WEBHOOK_VERSION 2.4.0
 ENV         JQ_VERSION 1.5
 ENV         VDOCKER_VERSION 0.0.4
 
